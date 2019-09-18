@@ -1,6 +1,6 @@
 function rungame(){ 
 let namegenerated;
-namegenerator();  //runs the game. note succescfull completion  of game is almost impossible first time going through 
+namegenerator();   
 acceptanceofdeal();
 let encountersresult = encounters();
 
@@ -29,22 +29,22 @@ function namegenerator(name){
 		}
 		else {
 			prompt("you did not type 0 or 1 try again") , namegenerator()	
-		}  //working on code for preventing misshaps with non 0 or 1 entered 
+		} 
 	
 	console.log(namegenerated)	
 }
 
-function rolldice(x){										//x= number of sides of dice being used with 0 and 1 of the sides 
+function rolldice(x){										
 	return Math.floor(Math.random() * x) + 1;
 }	
  function acceptanceofdeal(accept){
 	alert ("you can either attempt a adventure killing all of the bad guys " + namegenerated + ", or you can suffer being tortured beyond your imagination for the next century");
 	let acceptance = prompt("will you accept the offer");
-		if 	(acceptance !== "yes"){
-			alert ("enjoy your torture " + namegenerated + ".") , rungame();
+		if 	(acceptance == ("yes")){
+			alert ("good luck on your adventure" + namegenerated + ".") 
 		}
 		else{
-			alert ("goood luck on your adventure" + namegenerated + ".")
+			alert ("enjoy your torture " + namegenerated + "."); rungame();
 		}
 }
  function encounters(){
@@ -110,7 +110,7 @@ function rolldice(x){										//x= number of sides of dice being used with 0 an
  }
  function godsmercy(){
 	let granted = rolldice(100)
-	if(granted >=96){
+	if(granted >=2){
 		return true;
 
 	}
@@ -131,7 +131,8 @@ let mercyresult
 	if (reward === 1){
 		alert ("your reward is a swift painless death " + namegenerated + "");
 		mercyresult = godsmercy()
-			if (mercyresult === true){ alert ("the gods must want you to live. now you must marry my daughter and will eventually become the future ruller of this world")}
+			if (mercyresult === true){ alert ("the gods must want you to live. now you must marry my daughter and will eventually become the future ruller of this world")
+				}
 			else {
 				alert(namegenerated + "had there head cut off ");
 				rungame()
@@ -139,9 +140,10 @@ let mercyresult
 	}
 	else if (reward === 2){
 		alert ("you will marry my daughter" + namegenerated + " and will one day become the future ruller of the world");
-	}
+			}
 	else{
 		alert (" i have decided to let " + namegenerated + "go and live a happy live in this new world. however if" + namegenerated + "  to kill anyone else they will be killed themselfs.");
-	}		
-	} 	
+		
+	}	
+} 	
 rungame();
