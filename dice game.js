@@ -110,7 +110,7 @@ function rolldice(x){
  }
  function godsmercy(){
 	let granted = rolldice(100)
-	if(granted >=2){
+	if(granted >=96){
 		return true;
 
 	}
